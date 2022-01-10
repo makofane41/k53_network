@@ -28,11 +28,11 @@
         android:letterSpacing="0.025"
         android:text="K53 Network"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="70dp" />
+        tools:layout_editor_absoluteX="40dp"
+        tools:ignore="MissingConstraints" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
