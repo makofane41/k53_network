@@ -16,11 +16,7 @@
     android:enabled="true"
     android:icon="@drawable/ic_learners"
     android:title="@string/Learners"/>
-<item
-    android:id="@+id/page_4"
-    android:enabled="true"
-    android:icon="@drawable/ic_account_circle"
-    android:title="@string/Account"/>
+
     <item
         android:id="@+id/page_5"
         android:enabled="true"
