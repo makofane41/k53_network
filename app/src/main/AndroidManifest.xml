@@ -10,6 +10,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".supportActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LearnersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".driversActivity"
+            android:exported="false" />
+        <activity
+            android:name=".natisActivity"
+            android:exported="false" />
+        <activity
+            android:name=".formsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".bookingRequirementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".bookNowActivity"
+            android:exported="false" />
+        <activity
+            android:name=".testingCentreActivity"
+            android:exported="false" />
+        <activity
+            android:name=".drivingSchoolActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
