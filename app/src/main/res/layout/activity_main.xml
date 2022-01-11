@@ -109,14 +109,14 @@
                     android:layout_width="124dp"
                     android:layout_height="90dp"
                     android:src="@drawable/ic_drivingschool"
-                    app:layout_constraintBottom_toTopOf="@+id/textView1"
+                    app:layout_constraintBottom_toTopOf="@+id/textViewDrivingSchool"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView1"
+                    android:id="@+id/textViewDrivingSchool"
                     android:layout_width="128dp"
                     android:layout_height="37dp"
                     android:gravity="center"
