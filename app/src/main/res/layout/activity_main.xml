@@ -333,14 +333,14 @@
                     android:layout_width="125dp"
                     android:layout_height="77dp"
                     android:src="@drawable/ic_baseline_garage_24"
-                    app:layout_constraintBottom_toTopOf="@+id/textView23"
+                    app:layout_constraintBottom_toTopOf="@+id/textViewNatisOnline"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView23"
+                    android:id="@+id/textViewNatisOnline"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
