@@ -9,13 +9,9 @@
 <item
     android:id="@+id/page_2"
     android:enabled="true"
-    android:icon="@drawable/ic_driver"
-    android:title="@string/Driver"/>
-<item
-    android:id="@+id/page_3"
-    android:enabled="true"
-    android:icon="@drawable/ic_learners"
-    android:title="@string/Learners"/>
+    android:icon="@drawable/ic_account_circle"
+    android:title="@string/Account"/>
+
 
     <item
         android:id="@+id/page_5"

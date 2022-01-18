@@ -5,4 +5,8 @@
     <string name="Learners">Learners</string>
     <string name="Account">Account</string>
     <string name="Support">Support</string>
+    <string name="lForms">Learner\'s License Form </string>
+    <string name="DForms">Driver\'s License Form </string>
+    <string name="MadicalForms">Medical Certificate Form</string>
+    <string name="profForms">Professional Driving Permit </string>
 </resources>

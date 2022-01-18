@@ -158,14 +158,14 @@
                     android:layout_width="124dp"
                     android:layout_height="91dp"
                     android:src="@drawable/ic_testing"
-                    app:layout_constraintBottom_toTopOf="@+id/textView20"
+                    app:layout_constraintBottom_toTopOf="@+id/textViewTestingCentre"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView20"
+                    android:id="@+id/textViewTestingCentre"
                     android:layout_width="127dp"
                     android:layout_height="36dp"
                     android:gravity="center"
@@ -221,18 +221,18 @@
                     android:layout_width="138dp"
                     android:layout_height="86dp"
                     android:src="@drawable/ic_book_online"
-                    app:layout_constraintBottom_toTopOf="@+id/textView21"
+                    app:layout_constraintBottom_toTopOf="@+id/textViewBookNow"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView21"
+                    android:id="@+id/textViewBookNow"
                     android:layout_width="133dp"
                     android:layout_height="31dp"
                     android:gravity="center"
-                    android:text="Book Now"
+                    android:text="Driver's License"
                     android:textAllCaps="true"
                     android:textColor="@color/blue"
                     android:textSize="14sp"
@@ -270,18 +270,18 @@
                     android:layout_width="124dp"
                     android:layout_height="74dp"
                     android:src="@drawable/ic_requirement"
-                    app:layout_constraintBottom_toTopOf="@+id/textView22"
+                    app:layout_constraintBottom_toTopOf="@+id/textViewBookRequirement"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView22"
+                    android:id="@+id/textViewBookRequirement"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Booking requirement"
+                    android:text="Learners License"
                     android:textAllCaps="true"
                     android:textColor="@color/blue"
                     android:textSize="14sp"
@@ -381,14 +381,14 @@
                     android:layout_width="125dp"
                     android:layout_height="82dp"
                     android:src="@drawable/ic_download"
-                    app:layout_constraintBottom_toTopOf="@+id/textView4"
+                    app:layout_constraintBottom_toTopOf="@+id/textViewForms"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/textViewForms"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"

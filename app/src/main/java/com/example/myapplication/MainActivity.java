@@ -11,6 +11,11 @@ public class MainActivity extends AppCompatActivity {
 
     TextView drivingSchool;
     TextView textViewNatisOnline;
+    TextView textViewTestingCentre;
+    TextView textViewBookNow;
+    TextView textViewBookRequirement;
+    TextView textViewForms;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +24,45 @@ public class MainActivity extends AppCompatActivity {
 
         TextView drivingSchool = findViewById(R.id.textViewDrivingSchool);
         TextView textViewNatisOnline = findViewById(R.id.textViewNatisOnline);
+        TextView textViewTestingCentre = (TextView)findViewById(R.id.textViewTestingCentre);
+        TextView textViewBookNow = (TextView)findViewById(R.id.textViewBookNow);
+        TextView textViewBookRequirement = findViewById(R.id.textViewBookRequirement);
+        TextView textViewForms=findViewById(R.id.textViewForms);
+
+
+        textViewForms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent textViewForms=new Intent(getBaseContext(),formsActivity.class);
+                startActivity(textViewForms);
+            }
+        });
+
+
+        textViewBookRequirement.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent textViewBookRequirement = new Intent(getBaseContext(),bookingRequirementActivity.class);
+                startActivity(textViewBookRequirement);
+            }
+        });
+
+
+        textViewBookNow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent textViewBookNow= new Intent(getBaseContext(),bookNowActivity.class);
+                startActivity(textViewBookNow);
+            }
+        });
+
+        textViewTestingCentre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent textViewTestingCentre= new Intent(getBaseContext(),testingCentreActivity.class);
+                startActivity(textViewTestingCentre);
+            }
+        });
 
         textViewNatisOnline.setOnClickListener(new View.OnClickListener() {
             @Override
