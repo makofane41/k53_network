@@ -25,11 +25,26 @@ public class MainActivity extends AppCompatActivity {
         TextView drivingSchool = findViewById(R.id.textViewDrivingSchool);
         TextView textViewNatisOnline = findViewById(R.id.textViewNatisOnline);
         TextView textViewTestingCentre = (TextView)findViewById(R.id.textViewTestingCentre);
-        TextView textViewBookNow = (TextView)findViewById(R.id.textViewBookNow);
-        TextView textViewBookRequirement = findViewById(R.id.textViewBookRequirement);
+        TextView textViewDriversLicense = (TextView)findViewById(R.id.textViewDriversLicense);
         TextView textViewForms=findViewById(R.id.textViewForms);
+        TextView textViewLeanersLicense= findViewById(R.id.textViewLeanersLicense);
 
 
+        textViewLeanersLicense.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent textViewLeanersLicense= new Intent(getBaseContext(),LearnersActivity.class);
+                startActivity(textViewLeanersLicense);
+            }
+        });
+
+        textViewDriversLicense.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent textViewDriversLicense= new Intent(getBaseContext(),driversActivity.class);
+                startActivity(textViewDriversLicense);
+            }
+        });
         textViewForms.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -39,22 +54,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        textViewBookRequirement.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent textViewBookRequirement = new Intent(getBaseContext(),bookingRequirementActivity.class);
-                startActivity(textViewBookRequirement);
-            }
-        });
 
 
-        textViewBookNow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent textViewBookNow= new Intent(getBaseContext(),bookNowActivity.class);
-                startActivity(textViewBookNow);
-            }
-        });
+
+
 
         textViewTestingCentre.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -29,12 +29,6 @@
             android:name=".formsActivity"
             android:exported="false" />
         <activity
-            android:name=".bookingRequirementActivity"
-            android:exported="false" />
-        <activity
-            android:name=".bookNowActivity"
-            android:exported="false" />
-        <activity
             android:name=".testingCentreActivity"
             android:exported="false" />
         <activity

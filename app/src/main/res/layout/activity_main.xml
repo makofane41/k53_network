@@ -221,14 +221,14 @@
                     android:layout_width="138dp"
                     android:layout_height="86dp"
                     android:src="@drawable/ic_book_online"
-                    app:layout_constraintBottom_toTopOf="@+id/textViewBookNow"
+                    app:layout_constraintBottom_toTopOf="@+id/textViewDriversLicense"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textViewBookNow"
+                    android:id="@+id/textViewDriversLicense"
                     android:layout_width="133dp"
                     android:layout_height="31dp"
                     android:gravity="center"
@@ -270,14 +270,14 @@
                     android:layout_width="124dp"
                     android:layout_height="74dp"
                     android:src="@drawable/ic_requirement"
-                    app:layout_constraintBottom_toTopOf="@+id/textViewBookRequirement"
+                    app:layout_constraintBottom_toTopOf="@+id/textViewLeanersLicense"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textViewBookRequirement"
+                    android:id="@+id/textViewLeanersLicense"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
