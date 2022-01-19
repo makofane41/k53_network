@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".Register"
+            android:exported="false" />
+        <activity
             android:name=".Home"
             android:exported="false" />
         <activity
@@ -26,9 +29,6 @@
             android:exported="false" />
         <activity
             android:name=".driversActivity"
-            android:exported="false" />
-        <activity
-            android:name=".natisActivity"
             android:exported="false" />
         <activity
             android:name=".formsActivity"

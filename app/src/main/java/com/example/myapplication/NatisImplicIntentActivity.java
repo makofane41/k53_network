@@ -22,7 +22,7 @@ public class NatisImplicIntentActivity extends AppCompatActivity {
 
 
         //Intent receivedIntent = getIntent();
-        Uri uri = Uri.parse("https://online.natis.gov.za/");
+        Uri uri = Uri.parse("https://google.com/");
         URL webPageURL = null;
 
         if(uri != null){
