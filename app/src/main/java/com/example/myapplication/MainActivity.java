@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         btnNoAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent btnNoAccountIntent = new Intent(getBaseContext(),Home.class);
+                Intent btnNoAccountIntent = new Intent(getApplicationContext(),Home.class);
                 startActivity(btnNoAccountIntent);
             }
         });
