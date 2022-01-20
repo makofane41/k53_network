@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "164946038318",
+    "firebase_url": "https://stalwart-edge-239116-default-rtdb.firebaseio.com",
+    "project_id": "stalwart-edge-239116",
+    "storage_bucket": "stalwart-edge-239116.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:164946038318:android:145b7caeb0e0e9b70519bf",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "164946038318-6j71ic5p4vt39pagnpc4r2vqv15ec9pm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1AYi-RjNy8TzcYCKpS9VoyMzMhJEVwlk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "164946038318-6j71ic5p4vt39pagnpc4r2vqv15ec9pm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
