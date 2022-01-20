@@ -13,6 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".accountDetails"
+            android:exported="false" />
+        <activity
+            android:name=".LoggedHome"
+            android:exported="false" />
+        <activity
             android:name=".Account"
             android:exported="false" />
         <activity
