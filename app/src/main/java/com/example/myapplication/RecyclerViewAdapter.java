@@ -38,7 +38,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public int getItemCount() {
-        return 0;
+        return list.size();
     }
 
     public class MyViewholder extends RecyclerView.ViewHolder {
@@ -48,9 +48,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         public MyViewholder(@NonNull View itemView) {
             super(itemView);
-            DescLocation =itemView.findViewById(R.id.DescLocation);
+            DescLocation =itemView.findViewById(R.id.dragAnticlockwise);
             drivingName = itemView.findViewById(R.id.drivingName);
-            drivingProfile = itemView.findViewById(R.id.drivivingProfile);
+            drivingProfile = itemView.findViewById(R.id.drivingProfile);
         }
     }
 }

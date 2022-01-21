@@ -18,5 +18,17 @@
     <string name="google_icon">google icon</string>
     <string name="facebook_icon">facebook icon</string>
     <string name="new_user_register_now">New User? Register Now</string>
+    <string name="driveName">Driving School Name</string>
+    <string name="driveLocation">Location Details</string>
+    <array name="drivingName">
+        <item>Romeo Drving School</item>
+        <item>Given Driving Academy</item>
+        <item>Fast Academy</item>
+    </array>
+    <array name="drivingLocation">
+        <item>m=Middelburg Next to sasol</item>
+        <item>102 Shoshanguve Block l,125</item>
+        <item>Polokwane, 120 seshego</item>
+    </array>
 
 </resources>

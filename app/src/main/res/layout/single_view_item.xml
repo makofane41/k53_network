@@ -16,14 +16,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" >
+        tools:ignore="MissingConstraints">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/drivivingProfile"
+                android:id="@+id/drivingProfile"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginStart="8dp"
@@ -41,27 +41,31 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:fontFamily="sans-serif-thin"
-                android:text="Driving School Name"
+                android:text="@string/driveName"
                 android:textColor="@color/blue"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.117"
-                app:layout_constraintStart_toEndOf="@+id/drivivingProfile"
-                app:layout_constraintTop_toTopOf="@+id/drivivingProfile" />
+                app:layout_constraintStart_toEndOf="@+id/drivingProfile"
+                app:layout_constraintTop_toTopOf="@+id/drivingProfile" />
 
             <TextView
-                android:id="@+id/DescLocation"
+                android:id="@+id/drivingLocation"
                 android:layout_width="277dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="8dp"
                 android:fontFamily="sans-serif"
-                android:text=" Location Details"
-                android:textSize="14dp"
+                android:text="@string/driveLocation"
+                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/drivivingProfile"
+                app:layout_constraintStart_toEndOf="@+id/drivingProfile"
                 app:layout_constraintTop_toBottomOf="@+id/drivingName" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
