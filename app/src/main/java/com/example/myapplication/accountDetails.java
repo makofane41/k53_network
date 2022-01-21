@@ -5,45 +5,110 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class accountDetails extends AppCompatActivity {
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.auth.api.signin.GoogleSignInResult;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.OptionalPendingResult;
+import com.google.android.gms.common.api.ResultCallback;
+import com.google.android.gms.common.api.Status;
 
-    BottomNavigationView bottomNavigationView;
+public class accountDetails extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
+
+    Button logoutBtn;
+    TextView userName,userEmail,userId;
+    ImageView profileImage;
+    private GoogleApiClient googleApiClient;
+    private GoogleSignInOptions gso;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account_details);
-        bottomNavigationView= findViewById(R.id.Private_bottom_navigation);
-        bottomNavigationView.setSelectedItemId(R.id.account_m);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        logoutBtn=(Button)findViewById(R.id.logoutBtn);
+        userName=(TextView)findViewById(R.id.name);
+        userEmail=(TextView)findViewById(R.id.email);
+        userId=(TextView)findViewById(R.id.userId);
+
+
+        gso =  new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
+
+        googleApiClient=new GoogleApiClient.Builder(this)
+                .enableAutoManage(this,this)
+                .addApi(Auth.GOOGLE_SIGN_IN_API,gso)
+                .build();
+
+        logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-                switch (item.getItemId()){
-
-
-
-                    case R.id.account_m:
-
-                        return true;
-
-                    case R.id.home_m:
-                        startActivity(new Intent(getApplicationContext(),LoggedHome.class));
-                        overridePendingTransition(0,0);
-                        return true;
-
-                    case R.id.support_m:
-                        startActivity(new Intent(getApplicationContext(),supportActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                }
-
-                return false;
+            public void onClick(View view) {
+                Auth.GoogleSignInApi.signOut(googleApiClient).setResultCallback(
+                        new ResultCallback<Status>() {
+                            @Override
+                            public void onResult(Status status) {
+                                if (status.isSuccess()){
+                                    gotoMainActivity();
+                                }else{
+                                    Toast.makeText(getApplicationContext(),"Session not close", Toast.LENGTH_LONG).show();
+                                }
+                            }
+                        });
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        OptionalPendingResult<GoogleSignInResult> opr= Auth.GoogleSignInApi.silentSignIn(googleApiClient);
+        if(opr.isDone()){
+            GoogleSignInResult result=opr.get();
+            handleSignInResult(result);
+        }else{
+            opr.setResultCallback(new ResultCallback<GoogleSignInResult>() {
+                @Override
+                public void onResult(@NonNull GoogleSignInResult googleSignInResult) {
+                    handleSignInResult(googleSignInResult);
+                }
+            });
+        }
+    }
+
+    private void handleSignInResult(GoogleSignInResult result){
+        if(result.isSuccess()){
+            GoogleSignInAccount account=result.getSignInAccount();
+            userName.setText(account.getDisplayName());
+            userEmail.setText(account.getEmail());
+            userId.setText(account.getId());
+            try{
+                Toast.makeText(this, "Welocme"+ userName, Toast.LENGTH_SHORT).show();
+            }catch (NullPointerException e){
+                Toast.makeText(getApplicationContext(),"image not found",Toast.LENGTH_LONG).show();
+            }
+
+        }else{
+            gotoMainActivity();
+        }
+    }
+
+    private void gotoMainActivity(){
+        Intent intent=new Intent(this,MainActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+
     }
 }

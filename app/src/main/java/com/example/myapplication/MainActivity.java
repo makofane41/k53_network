@@ -3,34 +3,29 @@ package com.example.myapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.auth.api.signin.GoogleSignInResult;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.SignInButton;
+import com.google.android.gms.common.api.GoogleApiClient;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
+    ImageView googleLogin;
+    private GoogleApiClient googleApiClient;
+    TextView textView;
+    private static final int RC_SIGN_IN = 1;
     Button btnNoAccount;
     TextView gotoRegister;
-
-    TextView inputEmail, inputPassword;
-    Button btnLogin;
-    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
-    ProgressDialog progressDialog;
-
-    //firebase variable
-    FirebaseAuth mAuth;
-    FirebaseUser mUser;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,11 +35,6 @@ public class MainActivity extends AppCompatActivity {
         btnNoAccount = findViewById(R.id.btnNoAccount);
         gotoRegister = findViewById(R.id.gotoRegister);
 
-        inputEmail = findViewById(R.id.inputEmail);
-        inputPassword = findViewById(R.id.inputPassword);
-        btnLogin = findViewById(R.id.btnRegister);
-        progressDialog = new ProgressDialog(this);
-
         gotoRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(gotoRegisterIntent);
             }
         });
-
         btnNoAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,53 +51,49 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        //initialize firebase
-        mAuth = FirebaseAuth.getInstance();
-        mUser = mAuth.getCurrentUser();
+        GoogleSignInOptions gso =  new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
+        googleApiClient=new GoogleApiClient.Builder(this)
+                .enableAutoManage(this,this)
+                .addApi(Auth.GOOGLE_SIGN_IN_API,gso)
+                .build();
 
-        btnLogin.setOnClickListener(new View.OnClickListener() {
+        googleLogin =findViewById(R.id.googleLogin);
+        googleLogin.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                performLogin();
+            public void onClick(View view) {
+                Intent intent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
+                startActivityForResult(intent,RC_SIGN_IN);
             }
         });
 
-
     }
 
-    private void performLogin() {
-        String email = inputEmail.getText().toString();
-        //String name = inputName.getText().toString();
-        String password = inputPassword.getText().toString();
-
-        if (!email.matches(emailPattern)) {
-            inputEmail.setError("incorrect email!");
-
-        } else {
-            progressDialog.setMessage("Wait, While Loggin!");
-            progressDialog.setTitle("Registration");
-            progressDialog.setCanceledOnTouchOutside(false);
-            progressDialog.show();
-
-            mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if(task.isSuccessful()){
-                        progressDialog.dismiss();
-                        sendUserToNextActivity();
-                        Toast.makeText(MainActivity.this, "Welcome to K53 Network", Toast.LENGTH_SHORT).show();
-                    }else{
-                        progressDialog.dismiss();
-                        Toast.makeText(MainActivity.this, ""+task.getException(), Toast.LENGTH_SHORT).show();
-                    }
-                }
-            });
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==RC_SIGN_IN){
+            GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
+            handleSignInResult(result);
         }
     }
 
-    private void sendUserToNextActivity() {
-        Intent intent = new Intent(MainActivity.this,LoggedHome.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+    private void handleSignInResult(GoogleSignInResult result){
+        if(result.isSuccess()){
+            gotoProfile();
+        }else{
+            Toast.makeText(getApplicationContext(),"Sign in cancel",Toast.LENGTH_LONG).show();
+        }
+    }
+
+    private void gotoProfile(){
+        Intent intent=new Intent(MainActivity.this,LoggedHome.class);
         startActivity(intent);
+    }
+
+    @Override
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+
     }
 }
