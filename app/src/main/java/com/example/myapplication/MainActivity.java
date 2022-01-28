@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     }
 
     private void gotoProfile(){
-        Intent intent=new Intent(MainActivity.this,LoggedHome.class);
+        Intent intent=new Intent(MainActivity.this,Home.class);
         startActivity(intent);
     }
 
