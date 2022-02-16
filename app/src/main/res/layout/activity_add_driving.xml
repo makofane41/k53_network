@@ -54,7 +54,7 @@
         app:layout_constraintVertical_bias="0.126" />
 
     <EditText
-        android:id="@+id/inputEmail"
+        android:id="@+id/inputDrivingName"
         android:layout_width="328dp"
         android:layout_height="51dp"
         android:layout_marginStart="32dp"
@@ -74,7 +74,7 @@
         app:layout_constraintTop_toBottomOf="@+id/view5" />
 
     <EditText
-        android:id="@+id/inputPassword"
+        android:id="@+id/inputLocation"
         android:layout_width="334dp"
         android:layout_height="51dp"
         android:layout_marginStart="32dp"
@@ -91,10 +91,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/inputContact" />
 
     <EditText
-        android:id="@+id/inputConfirmPassword"
+        android:id="@+id/inputContact"
         android:layout_width="338dp"
         android:layout_height="50dp"
         android:layout_marginStart="32dp"
@@ -105,16 +105,16 @@
         android:drawablePadding="16dp"
         android:ems="10"
         android:hint="Contact Details"
-        android:inputType="text"
+        android:inputType="number"
         android:padding="16dp"
         android:textColor="@color/blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/inputLocation" />
 
     <Button
-        android:id="@+id/btnRegister"
+        android:id="@+id/btnAdd"
         android:layout_width="303dp"
         android:layout_height="38dp"
         android:layout_marginStart="32dp"
