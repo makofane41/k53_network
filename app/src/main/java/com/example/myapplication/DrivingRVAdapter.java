@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public abstract class DrivingRVAdapter extends RecyclerView.Adapter<DrivingRVAdapter.ViewHolder> {
+public class DrivingRVAdapter extends RecyclerView.Adapter<DrivingRVAdapter.ViewHolder> {
     //creating variables for our list, context, interface and position.
     private ArrayList<DrivingRVModal> courseRVModalArrayList;
     private Context context;

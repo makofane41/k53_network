@@ -43,7 +43,7 @@ public class addDriving extends AppCompatActivity {
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         // on below line creating our database reference.
-        databaseReference = firebaseDatabase.getReference("Courses");
+        databaseReference = firebaseDatabase.getReference("Driving Schools");
         // adding click listener for our add course button.
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
