@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="3dp">
+
+    <RelativeLayout
+        android:layout_width="442dp"
+        android:layout_height="match_parent"
+        android:background="@color/blue">
+
+        <!--image view for our course-->
+
+        <!--text view for course name-->
+
+        <TextView
+            android:id="@+id/showDrivingName"
+            android:layout_width="296dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="3dp"
+            android:padding="4dp"
+            android:text="Driving Name"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/showLocation"
+            android:layout_width="147dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/showDrivingName"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="260dp"
+            android:padding="4dp"
+            android:text="Location"
+            android:textColor="@color/white"
+            android:textSize="10dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/showContact"
+            android:layout_width="147dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/showLocation"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="201dp"
+            android:layout_marginTop="-22dp"
+            android:layout_marginEnd="79dp"
+            android:padding="4dp"
+            android:text="Contact Details"
+            android:textColor="@color/white"
+            android:textSize="10dp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/showDescription"
+            android:layout_width="380dp"
+            android:layout_height="74dp"
+            android:layout_below="@+id/showContact"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="40dp"
+            android:padding="4dp"
+            android:text="Description"
+            android:textColor="@color/white"
+            android:textSize="10dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/showMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/showDescription"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="332dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="47dp"
+            android:padding="4dp"
+            android:text="more info"
+            android:textColor="@color/white"
+            android:textSize="8dp"
+            android:textStyle="bold" />
+
+
+        <!--text view for course price-->
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
