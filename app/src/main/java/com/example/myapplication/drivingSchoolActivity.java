@@ -57,7 +57,7 @@ public class drivingSchoolActivity extends AppCompatActivity implements DrivingR
         mAuth = FirebaseAuth.getInstance();
         drivingRVModalArrayList = new ArrayList<>();
         //on below line we are getting database reference.
-        databaseReference = firebaseDatabase.getReference("Driving Schools");
+        databaseReference = firebaseDatabase.getReference("Driving Schools").child("DrvingID");
         //on below line adding a click listener for our floating action button.
         Home.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -127,32 +127,13 @@ public class drivingSchoolActivity extends AppCompatActivity implements DrivingR
         displayBottomSheet(drivingRVModalArrayList.get(position));
     }
 
-   /* @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        //adding a click listner for option selected on below line.
-        int id = item.getItemId();
-        switch (id) {
-            case R.id.idLogOut:
-                //displaying a toast message on user logged out inside on click.
-                Toast.makeText(getApplicationContext(), "User Logged Out", Toast.LENGTH_LONG).show();
-                //on below line we are signing out our user.
-                mAuth.signOut();
-                //on below line we are opening our login activity.
-                Intent i = new Intent(MainActivity.this, LoginActivity.class);
-                startActivity(i);
-                this.finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         //on below line we are inflating our menu file for displaying our menu options.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
-    }*/
+    }
 
     private void displayBottomSheet(DrivingRVModal modal) {
         //on below line we are creating our bottom sheet dialog.
@@ -168,31 +149,19 @@ public class drivingSchoolActivity extends AppCompatActivity implements DrivingR
         bottomSheetTeachersDialog.show();
         //on below line we are creating variables for our text view and image view inside bottom sheet
         //and initialing them with their ids.
-        TextView courseNameTV = layout.findViewById(R.id.idTVCourseName);
-        TextView courseDescTV = layout.findViewById(R.id.idTVCourseDesc);
-        TextView suitedForTV = layout.findViewById(R.id.idTVSuitedFor);
-        TextView priceTV = layout.findViewById(R.id.idTVCoursePrice);
-        ImageView courseIV = layout.findViewById(R.id.idIVCourse);
+        TextView courseNameTV = layout.findViewById(R.id.drivingName);
+        TextView courseDescTV = layout.findViewById(R.id.desc);
+        TextView suitedForTV = layout.findViewById(R.id.contact);
+
         //on below line we are setting data to different views on below line.
         courseNameTV.setText(modal.getDrivingNameName());
         courseDescTV.setText(modal.getDescription());
         suitedForTV.setText( modal.getLocation());
-        priceTV.setText( modal.getLocation());
-        Button viewBtn = layout.findViewById(R.id.idBtnVIewDetails);
-        Button editBtn = layout.findViewById(R.id.idBtnEditCourse);
 
-        //adding on click listener for our edit button.
-        editBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //on below line we are opening our EditCourseActivity on below line.
-                Intent i = new Intent(drivingSchoolActivity.this, Account.class);
-                //on below line we are passing our course modal
-                i.putExtra("course", modal);
-                startActivity(i);
-            }
-        });
-        //adding click listener for our view button on below line.
+        Button viewBtn = layout.findViewById(R.id.idBtnVIewDetails);
+
+
+
 
 
     }
